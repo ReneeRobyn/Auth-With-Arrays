@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel='stylesheet' href='style.css' type='text/css' media='all' />
+
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="form">
+      <h2>Authentication using Arrays</h2>
+        <form id="login">
+          <input name="firstname" type="text" placeholder="First name" tabindex="1" required/>
+          <input name="surname" type="text" placeholder="Surname" tabindex="2" required/>
+          <input name="age" type="text" placeholder="Age" tabindex="3" required/>
+          <input name="email" type="text" placeholder="Email address" tabindex="4" required/>
+          <input name="password1" type="password" placeholder="Password" tabindex="5" required/>
+          <input name="password2" type="password" placeholder="Confirm password" tabindex="6" required/>
+        </form>
+      <button onclick="myFunction()">Submit</button>
+    </div>
+  </div>
+
+<script>
+
+function myFunction()
+{
+  var inputs = document.getElementById('login').elements;
+  var password1 = inputs["password1"].value;
+  var password2 = inputs["password2"].value;
+
+  if(password1==password2)
+  {
+
+    alert("Success!");
+
+    var details = [];
+    for (var i=0; i<inputs.length; i++)
+    {
+      details.push(inputs[i]);
+      console.log(inputs[i].value);
+    }
+  }
+
+
+  else{
+    alert("Passwords do not match!");
+  }
+
+  location.reload();
+}
+</script>
+</body>
+</html>
